@@ -1,65 +1,95 @@
-<div class="sidebar">
-    <nav class="sidebar-nav">
-        <ul class="nav">
-            <li class="nav-title">
-                {{ __('menus.backend.sidebar.general') }}
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/dashboard')) }}" href="{{ route('admin.dashboard') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.dashboard') }}</a>
-            </li>
 
-            <li class="nav-title">
-                {{ __('menus.backend.sidebar.system') }}
-            </li>
+<!-- BEGIN: Left Aside -->
+<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+	<i class="la la-close"></i>
+</button>
 
-            @if ($logged_in_user->isAdmin())
-                <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/auth*'), 'open') }}">
-                    <a class="nav-link nav-dropdown-toggle" href="#">
-                        <i class="icon-user"></i> {{ __('menus.backend.access.title') }}
 
-                        @if ($pending_approval > 0)
-                            <span class="badge badge-danger">{{ $pending_approval }}</span>
-                        @endif
-                    </a>
+<div id="m_aside_left" class="m-aside-left  m-aside-left--skin-dark ">
+	<!-- BEGIN: Aside Menu -->
+	<div 		id="m_ver_menu" 		class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " 		data-menu-vertical="true"		 data-menu-scrollable="true" data-menu-dropdown-timeout="500"  		>
+		<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
 
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/auth/user*')) }}" href="{{ route('admin.auth.user.index') }}">
-                                {{ __('labels.backend.access.users.management') }}
 
-                                @if ($pending_approval > 0)
-                                    <span class="badge badge-danger">{{ $pending_approval }}</span>
-                                @endif
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/auth/role*')) }}" href="{{ route('admin.auth.role.index') }}">
-                                {{ __('labels.backend.access.roles.management') }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endif
+			<li class="m-menu__section">
+					<h4 class="m-menu__section-text">
+						{{ __('menus.backend.sidebar.general') }}
+					</h4>
+					<i class="m-menu__section-icon flaticon-more-v3"></i>
+			</li>
 
-            <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/log-viewer*'), 'open') }}">
-                <a class="nav-link nav-dropdown-toggle" href="#">
-                    <i class="icon-list"></i> {{ __('menus.backend.log-viewer.main') }}
-                </a>
+			<li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+					<a class="m-menu__link {{ active_class(Active::checkUriPattern('admin/dashboard')) }}" href="{{ route('admin.dashboard') }}">
+						<i class="m-menu__link-icon flaticon-dashboard"></i>
+						<span class="m-menu__link-text">
+								{{ __('menus.backend.sidebar.dashboard') }}
+						</span>
+					</a>
+			</li>
 
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/log-viewer')) }}" href="{{ route('log-viewer::dashboard') }}">
-                            {{ __('menus.backend.log-viewer.dashboard') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/log-viewer/logs*')) }}" href="{{ route('log-viewer::logs.list') }}">
-                            {{ __('menus.backend.log-viewer.logs') }}
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</div><!--sidebar-->
+			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover" data-redirect="true">
+				<a  href="#" class="m-menu__link m-menu__toggle">
+					<i class="m-menu__link-icon flaticon-graphic-1"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text">
+								{{ __('menus.backend.access.title') }}
+							</span>
+						</span>
+					</span>
+					<i class="m-menu__ver-arrow la la-angle-right"></i>
+				</a>
+				<div class="m-menu__submenu ">
+					<span class="m-menu__arrow"></span>
+					<ul class="m-menu__subnav">
+						<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"  data-redirect="true">
+							<span class="m-menu__link">
+								<span class="m-menu__link-title">
+									<span class="m-menu__link-wrap">
+										<span class="m-menu__link-text">
+											Support
+										</span>
+										<span class="m-menu__link-badge">
+											<span class="m-badge m-badge--accent">
+												3
+											</span>
+										</span>
+									</span>
+								</span>
+							</span>
+						</li>
+						<li class="m-menu__item {{ active_class(Active::checkUriPattern('admin/auth/user*')) }}" aria-haspopup="true"  data-redirect="true">
+							<a  href="{{ route('admin.auth.user.index') }}" class="m-menu__link ">
+								<span class="m-menu__link-text">
+									{{ __('menus.backend.access.users.management') }}
+								</span>
+
+								@if ($pending_approval > 0)
+								<span class="m-menu__link-badge">
+										<span class="m-badge m-badge--danger">
+											{{ $pending_approval }}
+										</span>
+								</span>
+								@endif
+
+							</a>
+						</li>
+						<li class="m-menu__item {{ active_class(Active::checkUriPattern('admin/auth/role*')) }}" aria-haspopup="true"  data-redirect="true">
+							<a  href="{{ route('admin.auth.role.index') }}" class="m-menu__link ">
+								<span class="m-menu__link-text">
+									{{ __('menus.backend.access.roles.management') }}
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+
+
+
+		</ul>
+	</div>
+	<!-- END: Aside Menu -->
+</div>
+<!-- END: Left Aside -->

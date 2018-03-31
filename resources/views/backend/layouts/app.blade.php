@@ -48,7 +48,7 @@
     <div class="m-grid m-grid--hor m-grid--root m-page">
 
       @include('backend.includes.header')
-      @include('backend.includes.aside')
+      @include('backend.includes.sidebar')
 
 
 
@@ -56,10 +56,9 @@
     	<div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor-desktop m-grid--desktop m-body">
     		<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-container m-container--responsive m-container--xxl m-container--full-height">
     			<div class="m-grid__item m-grid__item--fluid m-wrapper">
-            @include('backend.includes.partials.subheaderDefault')
     				<div class="m-content">
 
-              {{-- @yield('content') --}}
+              @yield('content')
 
             </div>
     			</div>

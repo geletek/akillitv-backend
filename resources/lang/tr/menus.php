@@ -14,7 +14,7 @@ return [
     */
 
     'backend' => [
-        'access' => [
+          'access' => [
             'title' => 'Erişim Yönetimi',
 
             'roles' => [
@@ -32,6 +32,7 @@ return [
                 'deactivated'     => 'Pasif Kullanıcılar',
                 'deleted'         => 'Silinmiş Kullanıcılar',
                 'edit'            => 'Kullanıcıyı Düzenle',
+                'management'      => 'Kullanıcı Yönetimi',
                 'main'            => 'Kullanıcılar',
                 'view'            => 'Kullanıcıyı Görüntüle',
             ],

@@ -8,8 +8,8 @@
 
 @section('content')
     {{ html()->form('POST', route('admin.auth.user.store'))->class('form-horizontal')->open() }}
-        <div class="card">
-            <div class="card-body">
+      <div class="m-portlet m-portlet--creative m-portlet--first m-portlet--bordered-semi">
+          <div class="m-portlet__body">
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
@@ -18,9 +18,7 @@
                         </h4>
                     </div><!--col-->
                 </div><!--row-->
-
                 <hr />
-
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
@@ -203,6 +201,7 @@
                         </div><!--form-group-->
                     </div><!--col-->
                 </div><!--row-->
+
             </div><!--card-body-->
 
             <div class="card-footer clearfix">
