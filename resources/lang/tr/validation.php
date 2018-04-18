@@ -151,6 +151,7 @@ return [
                     'name'                    => 'İsim',
                     'last_name'               => 'Soyad',
                     'first_name'              => 'Ad',
+                    'aboutMe'                 => 'Hakkında',
                     'other_permissions'       => 'Diğer Yetkiler',
                     'password'                => 'Parola',
                     'password_confirmation'   => 'Parola Onayı',

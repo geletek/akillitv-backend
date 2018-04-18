@@ -67,8 +67,14 @@ Route::group([
         /*
          * Role Management
          */
-        Route::group(['namespace' => 'Role'], function () {
-            Route::resource('role', 'RoleController', ['except' => ['show']]);
-        });
+         Route::group(['namespace' => 'Role'], function () {
+             Route::resource('role', 'RoleController', ['except' => ['show']]);
+         });
+
+
+         Route::group(['namespace' => 'Server'], function () {
+             Route::resource('server', 'ServerController', ['except' => ['show']]);
+         });
+
     });
 });

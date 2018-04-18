@@ -75,7 +75,10 @@ class UserController extends Controller
             'confirmed',
             'confirmation_email',
             'roles',
-            'permissions'
+            'permissions',
+
+            'telefon_no',
+            'aboutMe'
         ));
 
         return redirect()->route('admin.auth.user.index')->withFlashSuccess(__('alerts.backend.users.created'));
@@ -126,7 +129,10 @@ class UserController extends Controller
             'dogum_tarihi',
             'timezone',
             'roles',
-            'permissions'
+            'permissions',
+            'aboutMe',
+            'telefon_no',
+            'dogum_tarihi'
         ));
 
         return redirect()->route('admin.auth.user.index')->withFlashSuccess(__('alerts.backend.users.updated'));
