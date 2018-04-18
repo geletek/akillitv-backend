@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
+            $table->string('telefon_no')->unique();
+            $table->string('dogum_tarihi')->nullable();
+            $table->string('kayit_tarihi')->default('UTC');
             $table->string('avatar_type')->default('gravatar');
             $table->string('avatar_location')->nullable();
             $table->string('password')->nullable();

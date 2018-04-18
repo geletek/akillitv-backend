@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
 
@@ -149,6 +149,8 @@ return [
                     'confirmed'               => 'Onaylandı',
                     'email'                   => 'E-posta Adresi',
                     'name'                    => 'İsim',
+                    'telefon_no'              => 'Telefon Numarası',
+                    'dogum_tarihi'              => 'Doğum Tarihi',
                     'last_name'               => 'Soyad',
                     'first_name'              => 'Ad',
                     'other_permissions'       => 'Diğer Yetkiler',

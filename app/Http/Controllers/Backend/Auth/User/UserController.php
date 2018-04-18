@@ -69,6 +69,7 @@ class UserController extends Controller
             'last_name',
             'email',
             'password',
+            'dogum_tarihi',
             'timezone',
             'active',
             'confirmed',
@@ -122,6 +123,7 @@ class UserController extends Controller
             'first_name',
             'last_name',
             'email',
+            'dogum_tarihi',
             'timezone',
             'roles',
             'permissions'

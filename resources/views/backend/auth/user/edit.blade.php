@@ -33,6 +33,7 @@
                                 ->attribute('maxlength', 191)
                                 ->required() }}
                         </div><!--col-->
+                        
                     </div><!--form-group-->
 
                     <div class="form-group row">
@@ -42,6 +43,28 @@
                             {{ html()->text('last_name')
                                 ->class('form-control')
                                 ->placeholder(__('validation.attributes.backend.access.users.last_name'))
+                                ->attribute('maxlength', 191)
+                                ->required() }}
+                        </div><!--col-->
+                    </div><!--form-group-->
+                         <div class="form-group row">
+                        {{ html()->label(__('validation.attributes.backend.access.users.telefon_no'))->class('col-md-2 form-control-label')->for('last_name') }}
+
+                        <div class="col-md-10">
+                            {{ html()->text('telefon_no')
+                                ->class('form-control')
+                                ->placeholder(__('validation.attributes.backend.access.users.telefon_no'))
+                                ->attribute('maxlength', 191)
+                                ->required() }}
+                        </div><!--col-->
+                    </div><!--form-group-->
+                             <div class="form-group row">
+                        {{ html()->label(__('validation.attributes.backend.access.users.dogum_tarihi'))->class('col-md-2 form-control-label')->for('last_name') }}
+
+                        <div class="col-md-10">
+                            {{ html()->text('dogum_tarihi')
+                                ->class('form-control')
+                                ->placeholder(__('validation.attributes.backend.access.users.dogum_tarihi'))
                                 ->attribute('maxlength', 191)
                                 ->required() }}
                         </div><!--col-->
