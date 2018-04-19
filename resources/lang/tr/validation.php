@@ -152,6 +152,8 @@ return [
                     'last_name'               => 'Soyad',
                     'first_name'              => 'Ad',
                     'aboutMe'                 => 'Hakkında',
+                    'telefon_no'              => 'Telefon Numarası',
+                    'dogum_tarihi'            => 'Doğum Tarihi',
                     'other_permissions'       => 'Diğer Yetkiler',
                     'password'                => 'Parola',
                     'password_confirmation'   => 'Parola Onayı',
