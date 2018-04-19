@@ -18,6 +18,7 @@ return [
             'created' => 'Rol başarılı bir şekilde oluşturuldu.',
             'deleted' => 'Rol başarıyla silindi.',
             'updated' => 'Rol başarıyla güncellendi.',
+            'updated1' => 'Rol başarıyla güncellendi.',
         ],
 
         'users' => [
