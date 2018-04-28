@@ -69,7 +69,6 @@ class Kernel extends HttpKernel
         'password_expires' => \App\Http\Middleware\PasswordExpires::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
-        'server' => \Spatie\Permission\Middlewares\ServerMiddleware::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

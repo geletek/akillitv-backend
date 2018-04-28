@@ -37,7 +37,6 @@ return [
          */
 
         'roles' => 'roles',
-        'server' => 'servers',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
