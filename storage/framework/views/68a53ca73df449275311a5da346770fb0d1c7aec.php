@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-@langrtl
-    <html lang="{{ app()->getLocale() }}" dir="rtl">
-@else
-    <html lang="{{ app()->getLocale() }}">
-@endlangrtl
+<?php if (\Illuminate\Support\Facades\Blade::check('langrtl')): ?>
+    <html lang="<?php echo e(app()->getLocale()); ?>" dir="rtl">
+<?php else: ?>
+    <html lang="<?php echo e(app()->getLocale()); ?>">
+<?php endif; ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', app_name())</title>
-    <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
-    <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
-    @yield('meta')
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <title><?php echo $__env->yieldContent('title', app_name()); ?></title>
+    <meta name="description" content="<?php echo $__env->yieldContent('meta_description', 'Laravel 5 Boilerplate'); ?>">
+    <meta name="author" content="<?php echo $__env->yieldContent('meta_author', 'Anthony Rappa'); ?>">
+    <?php echo $__env->yieldContent('meta'); ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script>
@@ -34,22 +34,22 @@
 		<!--end::Base Styles -->
 		<link rel="shortcut icon" href="/assets/demo/default/media/img/logo/favicon.ico" />
 
-    @stack('before-styles')
+    <?php echo $__env->yieldPushContent('before-styles'); ?>
 
 
-    @stack('after-styles')
+    <?php echo $__env->yieldPushContent('after-styles'); ?>
 </head>
 
-<body class="{{ config('backend.body_classes') }}">
+<body class="<?php echo e(config('backend.body_classes')); ?>">
 
 
-    @include('backend.includes.loaderBase')
+    <?php echo $__env->make('backend.includes.loaderBase', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <!-- begin:: Page -->
     <div class="m-grid m-grid--hor m-grid--root m-page">
 
-      @include('backend.includes.header')
-      @include('backend.includes.sidebar')
+      <?php echo $__env->make('backend.includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+      <?php echo $__env->make('backend.includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
@@ -59,14 +59,14 @@
     			<div class="m-grid__item m-grid__item--fluid m-wrapper">
     				<div class="m-content">
 
-              @yield('content')
+              <?php echo $__env->yieldContent('content'); ?>
 
             </div>
     			</div>
     		</div>
     	</div>
     	<!-- end:: Body -->
-      @include('backend.includes.partials.footerDefault')
+      <?php echo $__env->make('backend.includes.partials.footerDefault', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     </div>
     <!-- end:: Page -->
 
