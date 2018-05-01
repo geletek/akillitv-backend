@@ -45,6 +45,7 @@ class CategoryController extends Controller
         return view('backend.category.show')
             ->withCategory($category);
     }
+    
 
     public function edit(Category $category, ManageCategoryRequest $request)
     {
