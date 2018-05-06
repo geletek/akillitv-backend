@@ -6,6 +6,7 @@ public/images
 /.idea
 /.vagrant
 /nbproject
+/vendor
 Homestead.json
 Homestead.yaml
 npm-debug.log

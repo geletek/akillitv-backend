@@ -21,7 +21,7 @@ var Default = function() {
             cancelButtonText: button_cancel
           }).then(function(e) {
             var form = $("<form/>",
-               { action:href, method:'destroy', id:'delete_form' }
+               { action:href, method:'post', id:'delete_form' }
             );
 
             form.append(

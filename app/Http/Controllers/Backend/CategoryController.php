@@ -46,7 +46,7 @@ class CategoryController extends Controller
             ->withCategory($category);
     }
 
-    
+
 
     public function edit(Category $category, ManageCategoryRequest $request)
     {
@@ -66,6 +66,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category, ManageCategoryRequest $request)
     {
+      
         $this->categoryRepository->deleteById($category->id);
         return redirect()->route('admin.category.deleted')->withFlashSuccess(__('alerts.backend.category.deleted'));
     }
