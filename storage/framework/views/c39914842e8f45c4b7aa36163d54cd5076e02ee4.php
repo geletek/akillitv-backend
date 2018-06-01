@@ -5,7 +5,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-    <?php echo e(html()->form('POST', route('admin.category.store'))->class('form-horizontal')->open()); ?>
+    <?php echo e(html()->form('POST', route('admin.video.category.store'))->class('form-horizontal')->open()); ?>
 
       <div class="m-portlet m-portlet--creative m-portlet--first m-portlet--bordered-semi">
 
@@ -74,7 +74,7 @@
             <div class="card-footer clearfix">
                 <div class="row">
                     <div class="col">
-                        <?php echo e(form_cancel(route('admin.category.index'), __('buttons.general.cancel'))); ?>
+                        <?php echo e(form_cancel(route('admin.video.category.index'), __('buttons.general.cancel'))); ?>
 
                     </div><!--col-->
 

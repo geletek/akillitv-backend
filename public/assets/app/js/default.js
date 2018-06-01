@@ -16,49 +16,50 @@ var Default = function() {
           swal({
             title: title,
             type: "warning",
-            showCancelButton: !0,
+            showCancelButton: true,
             confirmButtonText: button_confirm,
             cancelButtonText: button_cancel
           }).then(function(e) {
-            var form = $("<form/>",
-               { action:href, method:'post', id:'delete_form' }
-            );
+            if (e.value) {
+              var form = $("<form/>",
+                 { action:href, method:'post', id:'delete_form' }
+              );
 
-            form.append(
-                $("<input>",
-                     {
-                         type:'hidden',
-                         name:'_token',
-                         value: csrf
-                     }
-                 )
-            );
-
-            form.append(
-                $("<input>",
-                     {
-                         type:'hidden',
-                         name:'_method',
-                         value:'delete'
-                     }
-                 )
-            );
-
-            form.append(
-                 $("<input>",
-                      {
-                          type:'submit',
-                          value:'submit',
-                          style:'display:none'
-                      }
+              form.append(
+                  $("<input>",
+                       {
+                           type:'hidden',
+                           name:'_token',
+                           value: csrf
+                       }
                    )
-            );
-            $("body").append(form);
+              );
 
-            $( "#delete_form" ).submit();
+              form.append(
+                  $("<input>",
+                       {
+                           type:'hidden',
+                           name:'_method',
+                           value:'delete'
+                       }
+                   )
+              );
 
+              form.append(
+                   $("<input>",
+                        {
+                            type:'submit',
+                            value:'submit',
+                            style:'display:none'
+                        }
+                     )
+              );
+              $("body").append(form);
 
-          })
+              $( "#delete_form" ).submit();
+            }
+
+          });
         });
 
     };

@@ -14,29 +14,61 @@ return [
     */
 
     'backend' => [
-          'access' => [
-            'title' => 'Erişim Yönetimi',
+          'video' => [
+            'title' => 'Video Yönetimi',
 
-            'roles' => [
-                'all'        => 'Tüm Roller',
-                'create'     => 'Rol Oluştur',
-                'edit'       => 'Rol Düzenle',
-                'management' => 'Rol Yönetimi',
-                'main'       => 'Roller',
+            'categories' => [
+                'all'        => 'Tüm Kategoriler',
+                'create'     => 'Kategori Oluştur',
+                'edit'       => 'Kategori Düzenle',
+                'management' => 'Kategori Yönetimi',
+                'main'       => 'Kategoriler',
             ],
 
-            'users' => [
-                'all'             => 'Tüm Kullanıcılar',
-                'change-password' => 'Parolayı Değiştir',
-                'create'          => 'Kullanıcı Oluştur',
-                'deactivated'     => 'Pasif Kullanıcılar',
-                'deleted'         => 'Silinmiş Kullanıcılar',
-                'edit'            => 'Kullanıcıyı Düzenle',
-                'management'      => 'Kullanıcı Yönetimi',
-                'main'            => 'Kullanıcılar',
-                'view'            => 'Kullanıcıyı Görüntüle',
+            'video' => [
+                'all'             => 'Tüm Videolar',
+                'create'          => 'Video Yükle',
+                'deactivated'     => 'Pasif Videolar',
+                'deleted'         => 'Silinmiş Videolar',
+                'edit'            => 'Video Düzenle',
+                'management'      => 'Video Yönetimi',
+                'main'            => 'Videolar',
+                'view'            => 'Video Görüntüle',
             ],
+
+            'playlists' => [
+                'all'        => 'Tüm Playlistler',
+                'create'     => 'Playlist Oluştur',
+                'edit'       => 'Playlist Düzenle',
+                'management' => 'Playlist Yönetimi',
+                'main'       => 'Playlistler',
+            ],
+
         ],
+
+        'access' => [
+          'title' => 'Erişim Yönetimi',
+
+          'roles' => [
+              'all'        => 'Tüm Roller',
+              'create'     => 'Rol Oluştur',
+              'edit'       => 'Rol Düzenle',
+              'management' => 'Rol Yönetimi',
+              'main'       => 'Roller',
+          ],
+
+          'users' => [
+              'all'             => 'Tüm Kullanıcılar',
+              'change-password' => 'Parolayı Değiştir',
+              'create'          => 'Kullanıcı Oluştur',
+              'deactivated'     => 'Pasif Kullanıcılar',
+              'deleted'         => 'Silinmiş Kullanıcılar',
+              'edit'            => 'Kullanıcıyı Düzenle',
+              'management'      => 'Kullanıcı Yönetimi',
+              'main'            => 'Kullanıcılar',
+              'view'            => 'Kullanıcıyı Görüntüle',
+          ],
+      ],
 
         'log-viewer' => [
             'main'      => 'Log Görüntüleyici',

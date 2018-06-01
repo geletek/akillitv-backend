@@ -30,7 +30,60 @@
 
 			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover" data-redirect="true">
 				<a  href="#" class="m-menu__link m-menu__toggle">
-					<i class="m-menu__link-icon flaticon-graphic-1"></i>
+					<i class="m-menu__link-icon flaticon-imac"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text">
+								{{ __('menus.backend.video.title') }}
+							</span>
+						</span>
+					</span>
+					<i class="m-menu__ver-arrow la la-angle-right"></i>
+				</a>
+				<div class="m-menu__submenu ">
+					<span class="m-menu__arrow"></span>
+					<ul class="m-menu__subnav">
+						<li class="m-menu__item {{ active_class(Active::checkUriPattern('admin/video/category*')) }}" aria-haspopup="true"  data-redirect="true">
+							<a  href="{{ route('admin.video.category.index') }}" class="m-menu__link ">
+								<span class="m-menu__link-text">
+									{{ __('menus.backend.video.categories.management') }}
+								</span>
+
+								@if ($pending_approval > 0)
+								<span class="m-menu__link-badge">
+										<span class="m-badge m-badge--danger">
+											{{ $pending_approval }}
+										</span>
+								</span>
+								@endif
+
+							</a>
+						</li>
+						<li class="m-menu__item {{ active_class(Active::checkUriPattern('admin/video/video*')) }}" aria-haspopup="true"  data-redirect="true">
+							<a  href="{{ route('admin.video.video.index') }}" class="m-menu__link ">
+								<span class="m-menu__link-text">
+									{{ __('menus.backend.video.video.management') }}
+								</span>
+
+								@if ($pending_approval > 0)
+								<span class="m-menu__link-badge">
+										<span class="m-badge m-badge--danger">
+											{{ $pending_approval }}
+										</span>
+								</span>
+								@endif
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+
+
+
+
+			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover" data-redirect="true">
+				<a  href="#" class="m-menu__link m-menu__toggle">
+					<i class="m-menu__link-icon flaticon-users"></i>
 					<span class="m-menu__link-title">
 						<span class="m-menu__link-wrap">
 							<span class="m-menu__link-text">
@@ -43,22 +96,6 @@
 				<div class="m-menu__submenu ">
 					<span class="m-menu__arrow"></span>
 					<ul class="m-menu__subnav">
-						<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"  data-redirect="true">
-							<span class="m-menu__link">
-								<span class="m-menu__link-title">
-									<span class="m-menu__link-wrap">
-										<span class="m-menu__link-text">
-											Support
-										</span>
-										<span class="m-menu__link-badge">
-											<span class="m-badge m-badge--accent">
-												3
-											</span>
-										</span>
-									</span>
-								</span>
-							</span>
-						</li>
 						<li class="m-menu__item {{ active_class(Active::checkUriPattern('admin/auth/user*')) }}" aria-haspopup="true"  data-redirect="true">
 							<a  href="{{ route('admin.auth.user.index') }}" class="m-menu__link ">
 								<span class="m-menu__link-text">
@@ -87,6 +124,20 @@
 			</li>
 
 
+
+
+
+
+
+
+			<li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+					<a class="m-menu__link {{ active_class(Active::checkUriPattern('admin/log-viewer/logs*')) }}" href="{{ route('log-viewer::logs.list') }}">
+						<i class="m-menu__link-icon flaticon-notes"></i>
+						<span class="m-menu__link-text">
+								{{ __('menus.backend.log-viewer.logs') }}
+						</span>
+					</a>
+			</li>
 
 		</ul>
 	</div>

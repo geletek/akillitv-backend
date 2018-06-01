@@ -217,11 +217,11 @@ trait UserAttribute
     {
         if ($this->id != auth()->id() && $this->id != 1) {
             return '<a href="'.route('admin.auth.user.destroy', $this).'"
+                 class="dropdown-item sweet_delete_button"
                  data-method="delete"
                  data-trans-button-cancel="'.__('buttons.general.cancel').'"
                  data-trans-button-confirm="'.__('buttons.general.crud.delete').'"
-                 data-trans-title="'.__('strings.backend.general.are_you_sure').'"
-                 class="dropdown-item">'.__('buttons.general.crud.delete').'</a> ';
+                 data-trans-title="'.__('strings.backend.general.are_you_sure').'">'.__('buttons.general.crud.delete').'</a>';
         }
 
         return '';
@@ -260,7 +260,7 @@ trait UserAttribute
     	<div class="btn-group btn-group-sm" role="group" aria-label="User Actions">
 		  '.$this->show_button.'
 		  '.$this->edit_button.'
-		
+
 		  <div class="btn-group" role="group">
 			<button id="userActions" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			  More

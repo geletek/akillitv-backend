@@ -206,6 +206,7 @@ class Logger implements LoggerInterface
      */
     protected function fireLogEvent($level, $message, array $context = [])
     {
+        
         // If the event dispatcher is set, we will pass along the parameters to the
         // log listeners. These are useful for building profilers or other tools
         // that aggregate all of the log messages for a given "request" cycle.

@@ -1,92 +1,69 @@
 <?php $__env->startSection('title', app_name() . ' | '.__('labels.frontend.auth.login_box_title')); ?>
 
 <?php $__env->startSection('content'); ?>
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        <?php echo e(__('labels.frontend.auth.login_box_title')); ?>
+  <!-- begin:: Page -->
+  <div class="m-grid m-grid--hor m-grid--root m-page">
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-2" id="m_login" style="background-image: url(/assets/app/media/img//bg/bg-3.jpg);">
+      <div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
+        <div class="m-login__container">
+          <div class="m-login__logo">
+            <a href="#">
+              <img src="/assets/demo/default/media/img/logo/akillitv-logo-2.png" width="200" />
+            </a>
+          </div>
+          <div class="m-login__signin">
+            <div class="m-login__head">
+              <h3 class="m-login__title">
+                <?php echo e(__('labels.frontend.auth.login_box_title')); ?>
 
-                    </strong>
-                </div><!--card-header-->
+              </h3>
+            </div>
+            <?php echo e(html()->form('POST', route('frontend.auth.login.post'))->class('m-login__form m-form')->open()); ?>
 
-                <div class="card-body">
-                    <?php echo e(html()->form('POST', route('frontend.auth.login.post'))->open()); ?>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <?php echo e(html()->label(__('validation.attributes.frontend.email'))->for('email')); ?>
-
-
-                                    <?php echo e(html()->email('email')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
-                                        ->attribute('maxlength', 191)
-                                        ->required()); ?>
-
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <?php echo e(html()->label(__('validation.attributes.frontend.password'))->for('password')); ?>
+                <input name="_token" type="hidden" id="_token" value="<?php echo e(csrf_token()); ?>" />
+                <div class="form-group m-form__group">
+                            <?php echo e(html()->email('email')
+                                ->class('form-control m-input')
+                                ->placeholder(__('validation.attributes.frontend.email'))
+                                ->attribute('maxlength', 191)
+                                ->attribute('autocomplete', 'off')
+                                ->required()); ?>
 
 
-                                    <?php echo e(html()->password('password')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.password'))
-                                        ->required()); ?>
+                </div>
 
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                <div class="form-group m-form__group">
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <?php echo e(html()->label(html()->checkbox('remember', true, 1) . ' ' . __('labels.frontend.auth.remember_me'))->for('remember')); ?>
+                            <?php echo e(html()->password('password')
+                                ->class('form-control m-input m-login__form-input--last')
+                                ->placeholder(__('validation.attributes.frontend.password'))
+                                ->required()); ?>
 
-                                    </div>
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                </div>
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group clearfix">
-                                    <?php echo e(form_submit(__('labels.frontend.auth.login_button'))); ?>
+                <div class="form-group m-form__group">
+                                <?php echo e(html()->label(html()->checkbox('remember', true, 1) . ' ' . __('labels.frontend.auth.remember_me'))->for('remember')); ?>
 
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                </div>
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group text-right">
-                                    <a href="<?php echo e(route('frontend.auth.password.reset')); ?>"><?php echo e(__('labels.frontend.passwords.forgot_password')); ?></a>
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-                    <?php echo e(html()->form()->close()); ?>
+                <div class="form-group m-form__group m-login__form-action text-center">
+                            <?php echo e(form_submit(__('labels.frontend.auth.login_button'))->class('btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary')); ?>
+
+                </div>
+
+                <div class="m-login__form-action" style="display:none;">
+                    <a href="<?php echo e(route('frontend.auth.password.reset')); ?>"><?php echo e(__('labels.frontend.passwords.forgot_password')); ?></a>
+                </div>
+            <?php echo e(html()->form()->close()); ?>
 
 
-                    <div class="row">
-                        <div class="col">
-                            <div class="text-center">
-                                <?php echo $socialiteLinks; ?>
 
-                            </div>
-                        </div><!--col-->
-                    </div><!--row-->
-                </div><!--card body-->
-            </div><!--card-->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end:: Page -->
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('frontend.layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

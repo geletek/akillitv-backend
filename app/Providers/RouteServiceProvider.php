@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Auth\User;
+use App\Models\Video\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -39,6 +40,12 @@ class RouteServiceProvider extends ServiceProvider
             $user = new User;
 
             return User::withTrashed()->where($user->getRouteKeyName(), $value)->first();
+        });
+
+        $this->bind('deletedCategory', function ($value) {
+            $category = new Category;
+
+            return Category::withTrashed()->where($category->getRouteKeyName(), $value)->first();
         });
 
         parent::boot();
